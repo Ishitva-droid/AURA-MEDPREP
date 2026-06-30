@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AURA MEDPREP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#f5fff8;
+color:#222;
+overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#10b981;
+border-radius:20px;
+
+}
+
+/* Navbar */
+
+nav{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(11,132,87,.92);
+backdrop-filter:blur(12px);
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+font-weight:700;
+color:white;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+
+}
+
+nav ul li{
+
+margin-left:28px;
+
+}
+
+nav ul li a{
+
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#ffe66d;
+
+}
+
+/* Hero */
+
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+padding:0 20px;
+color:white;
+
+}
+
+.hero h1{
+
+font-size:65px;
+font-weight:700;
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:23px;
+max-width:850px;
+margin-bottom:35px;
+line-height:1.7;
+
+}
+
+.hero-buttons{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:16px 42px;
+
+background:linear-gradient(135deg,#10b981,#0b8457);
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.35s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.btn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 25px 45px rgba(0,0,0,.35);
+
+}
+
+.btn2{
+
+background:white;
+
+color:#0b8457;
+
+}
+
+/* Floating Shapes */
+
+.circle{
+
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,.12);
+animation:float 7s infinite ease-in-out;
+
+}
+
+.circle1{
+
+width:170px;
+height:170px;
+top:120px;
+left:100px;
+
+}
+
+.circle2{
+
+width:250px;
+height:250px;
+right:100px;
+bottom:120px;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+
+}
+
+/* Sections */
+
+.section{
+
+padding:90px 8%;
+
+}
+
+.section h2{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:60px;
+
+color:#0b8457;
+
+}
+
+/* Stats */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+padding:80px 8%;
+
+background:white;
+
+}
+
+.stat{
+
+background:white;
+
+border-radius:25px;
+
+padding:40px;
+
+text-align:center;
+
+box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+transition:.4s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-10px);
+
+}
+
+.stat h1{
+
+font-size:50px;
+
+color:#0b8457;
+
+margin-bottom:15px;
+
+}
+
+.stat p{
+
+font-size:18px;
+
+}
+
+/* Cards */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.85);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:30px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+transition:.4s;
+
+text-align:center;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.card h3{
+
+font-size:26px;
+
+margin-bottom:15px;
+
+color:#0b8457;
+
+}
+
+.card p{
+
+margin-bottom:18px;
+
+line-height:1.8;
+
+}
+
+.card a{
+
+display:inline-block;
+
+margin-top:10px;
+
+padding:13px 28px;
+
+background:#10b981;
+
+color:white;
+
+border-radius:40px;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.card a:hover{
+
+background:#0b8457;
+
+}
+
+.price{
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#0b8457;
+
+margin:15px 0;
+
+}
+
+/* Gallery */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+border-radius:22px;
+
+transition:.4s;
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+nav{
+flex-direction:column;
+padding:15px;
+}
+
+nav ul{
+margin-top:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav ul li{
+margin:8px;
+}
+
+.section h2{
+font-size:34px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.btn{
+padding:14px 28px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Floating Background Circles -->
+
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+NEET Guidance
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#study">Study Material</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#premium">Premium</a></li>
+
+<li><a href="#youtube">YouTube</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<h1>Crack NEET With Confidence</h1>
+
+<p>
+
+Premium Notes • Counselling • PYQs • Test Series • College Guidance
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#study" class="btn">
+
+Study Material
+
+</a>
+
+<a href="#premium" class="btn btn2">
+
+Premium Notes
+
+</a>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat">
+
+<h1>10K+</h1>
+
+<p>Students Guided</p>
+
+</div>
+
+<div class="stat">
+
+<h1>500+</h1>
+
+<p>Premium Notes</p>
+
+</div>
+
+<div class="stat">
+
+<h1>100+</h1>
+
+<p>Test Papers</p>
+
+</div>
+
+<div class="stat">
+
+<h1>98%</h1>
+
+<p>Student Satisfaction</p>
+
+</div>
+
+</section>
+
+<!-- STUDY MATERIAL -->
+
+<section class="section" id="study">
+
+<h2>Free Study Material</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Biology Notes</h3>
+
+<p>
+
+NCERT Notes
+
+<br>
+
+Important Diagrams
+
+<br>
+
+Short Revision Notes
+
+</p>
+
+<a href="#">
+
+Open Google Drive
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Chemistry Notes</h3>
+
+<p>
+
+Organic
+
+<br>
+
+Inorganic
+
+<br>
+
+Physical
+
+</p>
+
+<a href="#">
+
+Open Google Drive
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Physics Notes</h3>
+
+<p>
+
+Formula Sheets
+
+<br>
+
+Short Notes
+
+<br>
+
+Important Questions
+
+</p>
+
+<a href="#">
+
+Open Google Drive
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- IMAGE GALLERY -->
+
+<section class="section" id="gallery">
+
+<h2>NEET Gallery</h2>
+
+<div class="gallery">
+
+<img src="YOUR_GOOGLE_DRIVE_IMAGE_LINK">
+
+<img src="YOUR_GOOGLE_DRIVE_IMAGE_LINK">
+
+<img src="YOUR_GOOGLE_DRIVE_IMAGE_LINK">
+
+<img src="YOUR_GOOGLE_DRIVE_IMAGE_LINK">
+
+<img src="YOUR_GOOGLE_DRIVE_IMAGE_LINK">
+
+<img src="YOUR_GOOGLE_DRIVE_IMAGE_LINK">
+
+<img src="YOUR_GOOGLE_DRIVE_IMAGE_LINK">
+
+<img src="YOUR_GOOGLE_DRIVE_IMAGE_LINK">
+
+</div>
+
+</section>
+<section class="section" id="premium">
+
+<h2>Premium Notes</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Complete NEET Package</h3>
+
+<p>
+
+✔ Complete Biology Notes<br><br>
+
+✔ Complete Chemistry Notes<br><br>
+
+✔ Complete Physics Notes<br><br>
+
+✔ PYQs With Solutions<br><br>
+
+✔ Revision Notes
+
+</p>
+
+<div class="price">₹299</div>
+
+<a href="#">Buy Now</a>
+
+</div>
+
+<div class="card">
+
+<h3>Mock Test Package</h3>
+
+<p>
+
+✔ 30 Full Length Tests<br><br>
+
+✔ Topic Wise Tests<br><br>
+
+✔ NCERT Based Questions<br><br>
+
+✔ Answer Keys<br><br>
+
+✔ Detailed Solutions
+
+</p>
+
+<div class="price">₹199</div>
+
+<a href="#">Buy Now</a>
+
+</div>
+
+<div class="card">
+
+<h3>Premium Combo</h3>
+
+<p>
+
+✔ Notes + Test Series<br><br>
+
+✔ Counselling Support<br><br>
+
+✔ College Predictor<br><br>
+
+✔ Bonus PDFs<br><br>
+
+✔ Lifetime Updates
+
+</p>
+
+<div class="price">₹499</div>
+
+<a href="#">Buy Now</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="youtube">
+
+<h2>Latest YouTube Videos</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Biology Marathon</h3>
+
+<p>
+
+Complete Human Physiology Revision
+
+</p>
+
+<a href="https://www.youtube.com/watch?v=LxS43MePKdc">
+
+Watch Now
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Chemistry Tricks</h3>
+
+<p>
+
+Important Organic Reactions & Shortcuts
+
+</p>
+
+<a href="#">
+
+Watch Now
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Physics Formula Revision</h3>
+
+<p>
+
+Most Important Formulas For NEET
+
+</p>
+
+<a href="#">
+
+Watch Now
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="counselling">
+
+<h2>Premium Counselling</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Personal Guidance</h3>
+
+<p>
+
+✔ College Selection<br><br>
+
+✔ Choice Filling<br><br>
+
+✔ Document Verification<br><br>
+
+✔ Round Wise Guidance<br><br>
+
+✔ WhatsApp Support
+
+</p>
+
+<div class="price">₹499</div>
+
+<a href="#">
+
+Book Now
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Student Testimonials</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+
+"The notes were very clean and helped me revise the syllabus in a short time. Highly recommended."
+
+</p>
+
+<h4>- Rahul Sharma</h4>
+
+</div>
+
+<div class="card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+
+"The counselling process was smooth and I got my preferred college without any confusion."
+
+</p>
+
+<h4>- Priya Singh</h4>
+
+</div>
+
+<div class="card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+
+"Best affordable NEET guidance platform. Worth every rupee."
+
+</p>
+
+<h4>- Aditya Kumar</h4>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Do I get lifetime access?</h3>
+
+<p>
+
+Yes, once purchased, all notes remain available for future updates.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>How will I receive the notes?</h3>
+
+<p>
+
+Instant Google Drive access after successful payment.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Can I contact for counselling?</h3>
+
+<p>
+
+Yes, WhatsApp support is available after booking.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="section" id="contact">
+
+<h2>Contact Us</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>📧 Email</h3>
+
+<p>
+
+your@email.com
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📱 WhatsApp</h3>
+
+<p>
+
++91 XXXXXXXXXX
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📢 Telegram</h3>
+
+<p>
+
+@yourchannel
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer style="background:#0b8457;color:white;padding:60px 8%;text-align:center;">
+
+<h2 style="margin-bottom:20px;">NEET Guidance</h2>
+
+<p style="font-size:17px;line-height:1.8;max-width:800px;margin:auto;">
+
+Helping thousands of NEET aspirants with premium notes, mock tests,
+college counselling, PYQs, and complete preparation resources.
+
+</p>
+
+<br>
+
+<hr style="border:1px solid rgba(255,255,255,.25);">
+
+<br>
+
+<p>
+
+© 2026 NEET Guidance. All Rights Reserved.
+
+</p>
+
+<br>
+
+<p>
+
+Designed with ❤️ for Future Doctors
+
+</p>
+
+</footer>
+
+<a href="https://wa.me/91XXXXXXXXXX"
+
+style="
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:65px;
+
+height:65px;
+
+background:#25D366;
+
+color:white;
+
+font-size:32px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-decoration:none;
+
+box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+z-index:999;
+
+transition:.3s;
+
+">
+
+💬
+
+</a>
+
+</body>
+
+</html>
