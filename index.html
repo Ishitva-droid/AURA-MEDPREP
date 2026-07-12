@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AURA MEDPREP  Premium NEET & Allied Healthcare Counselling</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#040816;
+overflow-x:hidden;
+color:white;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:700px;
+height:700px;
+background:#3b82f655;
+border-radius:50%;
+top:-220px;
+left:-220px;
+filter:blur(150px);
+z-index:-2;
+animation:move1 10s infinite alternate;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:650px;
+height:650px;
+background:#8b5cf650;
+border-radius:50%;
+right:-180px;
+bottom:-180px;
+filter:blur(170px);
+z-index:-2;
+animation:move2 12s infinite alternate;
+}
+
+@keyframes move1{
+from{transform:translate(0,0);}
+to{transform:translate(80px,60px);}
+}
+
+@keyframes move2{
+from{transform:translate(0,0);}
+to{transform:translate(-80px,-70px);}
+}
+
+header{
+width:100%;
+position:fixed;
+top:0;
+left:0;
+padding:22px 9%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:999;
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+letter-spacing:1px;
+color:#fff;
+}
+
+.logo span{
+color:#00E5FF;
+}
+
+nav{
+display:flex;
+gap:35px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.4s;
+position:relative;
+}
+
+nav a:hover{
+color:#00E5FF;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:2px;
+background:#00E5FF;
+transition:.4s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 9% 80px;
+gap:50px;
+}
+
+.hero-left{
+width:58%;
+animation:fadeUp 1.2s;
+}
+
+.tag{
+display:inline-block;
+padding:10px 20px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+border-radius:40px;
+font-size:15px;
+margin-bottom:28px;
+backdrop-filter:blur(15px);
+}
+
+.hero-left h1{
+font-size:64px;
+line-height:1.15;
+font-weight:800;
+margin-bottom:25px;
+}
+
+.hero-left h1 span{
+background:linear-gradient(90deg,#00E5FF,#8B5CF6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-left p{
+font-size:19px;
+line-height:1.9;
+color:#d8d8d8;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 34px;
+border-radius:60px;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+}
+
+.btn-primary{
+background:linear-gradient(90deg,#2563EB,#00E5FF);
+color:white;
+box-shadow:0 20px 40px rgba(37,99,235,.35);
+}
+
+.btn-primary:hover{
+transform:translateY(-6px);
+box-shadow:0 25px 50px rgba(0,229,255,.35);
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.06);
+color:white;
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+}
+
+.btn-secondary:hover{
+background:white;
+color:#111827;
+transform:translateY(-6px);
+}
+
+.hero-right{
+width:42%;
+display:flex;
+justify-content:center;
+animation:fadeUp 1.5s;
+}
+
+.hero-card{
+width:100%;
+max-width:430px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(22px);
+border-radius:35px;
+padding:35px;
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.hero-card h3{
+font-size:30px;
+margin-bottom:25px;
+}
+
+.hero-card ul{
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.hero-card li{
+display:flex;
+align-items:center;
+gap:15px;
+font-size:17px;
+color:#ececec;
+}
+
+.tick{
+width:36px;
+height:36px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(90deg,#00E5FF,#2563EB);
+font-weight:700;
+}
+
+section{
+padding:100px 9%;
+}
+
+.section-title{
+text-align:center;
+font-size:44px;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.section-title span{
+color:#00E5FF;
+}
+
+.section-subtitle{
+text-align:center;
+font-size:18px;
+color:#d2d2d2;
+margin-bottom:70px;
+line-height:1.8;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.feature-box{
+background:rgba(255,255,255,.06);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+transition:.4s;
+}
+
+.feature-box:hover{
+transform:translateY(-12px);
+border-color:#00E5FF;
+box-shadow:0 25px 60px rgba(0,229,255,.15);
+}
+
+.feature-icon{
+width:70px;
+height:70px;
+border-radius:20px;
+background:linear-gradient(135deg,#2563EB,#00E5FF);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+margin-bottom:22px;
+}
+
+.feature-box h3{
+margin-bottom:15px;
+font-size:24px;
+}
+
+.feature-box p{
+line-height:1.8;
+color:#d9d9d9;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(60px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+.mentors{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+margin-top:20px;
+}
+
+.mentor-card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+border-radius:30px;
+padding:40px 25px;
+text-align:center;
+backdrop-filter:blur(18px);
+transition:.4s;
+}
+
+.mentor-card:hover{
+transform:translateY(-12px);
+border-color:#00E5FF;
+box-shadow:0 25px 60px rgba(0,229,255,.18);
+}
+
+.mentor-card img{
+width:190px;
+height:190px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid rgba(255,255,255,.12);
+transition:.4s;
+}
+
+.mentor-card:hover img{
+transform:scale(1.06);
+border-color:#00E5FF;
+}
+
+.mentor-card h3{
+margin-top:25px;
+font-size:26px;
+font-weight:700;
+}
+
+.mentor-card p{
+margin-top:10px;
+color:#d7d7d7;
+font-size:16px;
+line-height:1.7;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+margin-top:20px;
+}
+
+.price-card{
+background:rgba(255,255,255,.07);
+border-radius:30px;
+padding:45px 35px;
+text-align:center;
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.price-card::before{
+content:'';
+position:absolute;
+top:-90px;
+right:-90px;
+width:180px;
+height:180px;
+border-radius:50%;
+background:rgba(0,229,255,.12);
+}
+
+.price-card:hover{
+transform:translateY(-15px);
+box-shadow:0 25px 70px rgba(0,229,255,.18);
+border-color:#00E5FF;
+}
+
+.price-card h3{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.price{
+font-size:60px;
+font-weight:800;
+margin-bottom:25px;
+background:linear-gradient(90deg,#00E5FF,#8B5CF6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.price-card ul{
+list-style:none;
+margin-bottom:35px;
+}
+
+.price-card ul li{
+margin:16px 0;
+font-size:17px;
+color:#e2e2e2;
+}
+
+.buy-btn{
+display:inline-block;
+padding:16px 38px;
+border-radius:50px;
+background:linear-gradient(90deg,#2563EB,#00E5FF);
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+}
+
+.buy-btn:hover{
+transform:scale(1.05);
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.review{
+background:rgba(255,255,255,.06);
+border-radius:25px;
+padding:35px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.review:hover{
+transform:translateY(-10px);
+border-color:#00E5FF;
+}
+
+.review p{
+line-height:1.9;
+color:#dcdcdc;
+margin-bottom:25px;
+}
+
+.review h4{
+font-size:19px;
+}
+
+.review span{
+color:#00E5FF;
+font-size:15px;
+}
+
+.faq{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.faq-item{
+background:rgba(255,255,255,.06);
+padding:30px;
+border-radius:22px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.faq-item h3{
+margin-bottom:15px;
+font-size:22px;
+}
+
+.faq-item p{
+color:#d7d7d7;
+line-height:1.8;
+}
+
+.contact-box{
+background:rgba(255,255,255,.06);
+border-radius:30px;
+padding:60px;
+text-align:center;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.contact-box h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.contact-box p{
+font-size:18px;
+color:#d8d8d8;
+margin-bottom:35px;
+line-height:1.8;
+}
+
+footer{
+padding:40px 9%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.03);
+}
+
+footer p{
+color:#bfbfbf;
+font-size:15px;
+}
+
+@media(max-width:1100px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-left,
+.hero-right{
+width:100%;
+}
+
+.features,
+.mentors,
+.pricing,
+.testimonials{
+grid-template-columns:1fr;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+}
+
+@media(max-width:700px){
+
+.hero-left h1{
+font-size:42px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.contact-box{
+padding:35px 25px;
+}
+
+header{
+padding:18px 6%;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+M<span>Study</span>
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#features">Features</a>
+<a href="#mentors">Mentors</a>
+<a href="#plans">Programs</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="tag">
+India's Premium Career Counselling Program
+</div>
+
+<h1>
+
+NEET &
+<span>Allied Healthcare</span>
+
+Career Guidance
+
+</h1>
+
+<p>
+
+Get expert guidance for NEET, Nursing and Allied Healthcare admissions from experienced mentors.
+Personalized counselling, college selection, admission support and career planning—all in one place.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfDB69YqdLbnoyDiDKuWQyOC6a6kk6ujzuUWer7fNkOPp1G0Q/viewform?usp=dialog" class="btn btn-primary">
+
+Register Now
+
+</a>
+
+<a href="#plans" class="btn btn-secondary">
+
+View Programs
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-card">
+
+<h3>
+
+Why Students Choose AURA MEDPREP
+
+</h3>
+
+<ul>
+
+<li><span class="tick">✓</span>Expert Mentorship</li>
+
+<li><span class="tick">✓</span>1:1 Career Counselling</li>
+
+<li><span class="tick">✓</span>Admission Guidance</li>
+
+<li><span class="tick">✓</span>Premium Support</li>
+
+<li><span class="tick">✓</span>Affordable Programs</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 class="section-title">
+
+Why <span>AURA MEDPREP?</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+Everything you need for NEET, Nursing and Allied Healthcare counselling under one platform.
+
+</p>
+
+<div class="features">
+
+<div class="feature-box">
+
+<div class="feature-icon">🎯</div>
+
+<h3>Career Planning</h3>
+
+<p>
+Choose the best career path based on your marks, interests and future opportunities.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<div class="feature-icon">👨‍🏫</div>
+
+<h3>Expert Mentors</h3>
+
+<p>
+Guidance from experienced mentors with complete admission assistance.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<div class="feature-icon">🏥</div>
+
+<h3>College Selection</h3>
+
+<p>
+Find the best government and private colleges according to your budget and rank.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="mentors">
+
+<h2 class="section-title">
+Meet Our <span>Mentors</span>
+</h2>
+
+<p class="section-subtitle">
+Learn from experienced counsellors dedicated to helping students choose the right career path.
+</p>
+
+<div class="mentors">
+
+<div class="mentor-card">
+<img src="mentor1.jpg" alt="Mentor 1">
+
+<h3>Mentor Name</h3>
+
+<p>
+Senior Career Counsellor<br>
+NEET & Allied Healthcare Expert
+</p>
+
+</div>
+
+<div class="mentor-card">
+<img src="mentor2.jpg" alt="Mentor 2">
+
+<h3>Mentor Name</h3>
+
+<p>
+Admission Guidance Expert<br>
+Personal Mentorship
+</p>
+
+</div>
+
+<div class="mentor-card">
+<img src="mentor3.jpg" alt="Mentor 3">
+
+<h3>Mentor Name</h3>
+
+<p>
+Medical Career Mentor<br>
+College Selection Specialist
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="plans">
+
+<h2 class="section-title">
+Premium <span>Programs</span>
+</h2>
+
+<p class="section-subtitle">
+Choose the counselling package that best fits your requirements.
+</p>
+
+<div class="pricing">
+
+<div class="price-card">
+
+<h3>
+Allied Healthcare
+</h3>
+
+<div class="price">
+₹399
+</div>
+
+<ul>
+
+<li>✔ Complete Allied Healthcare Guidance</li>
+
+<li>✔ Best College Suggestions</li>
+
+<li>✔ Admission Process Support</li>
+
+<li>✔ Course Selection Help</li>
+
+<li>✔ WhatsApp Support</li>
+
+</ul>
+
+<a href="https://rzp.io/l/399" class="buy-btn">
+
+Buy Now
+
+</a>
+
+</div>
+
+
+
+<div class="price-card">
+
+<h3>
+Allied Healthcare
+<br>
+1:1 Counselling
+</h3>
+
+<div class="price">
+₹499
+</div>
+
+<ul>
+
+<li>✔ Everything in ₹399 Plan</li>
+
+<li>✔ Personal 1:1 Meeting</li>
+
+<li>✔ Rank Analysis</li>
+
+<li>✔ Personalized College List</li>
+
+<li>✔ Dedicated Mentor Support</li>
+
+</ul>
+
+<a href="https://rzp.io/l/499" class="buy-btn">
+
+Buy Now
+
+</a>
+
+</div>
+
+
+
+<div class="price-card">
+
+<h3>
+NEET + Allied Healthcare + Nursing
+<br>
+1:1 Counselling
+</h3>
+
+<div class="price">
+₹699
+</div>
+
+<ul>
+
+<li>✔ NEET Counselling</li>
+
+<li>✔ Allied Healthcare Guidance</li>
+
+<li>✔ Nursing Admission Guidance</li>
+
+<li>✔ Personal 1:1 Counselling</li>
+
+<li>✔ Premium Support</li>
+
+</ul>
+
+<a href="https://rzp.io/l/699" class="buy-btn">
+
+Buy Now
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="section-title">
+
+Student <span>Testimonials</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+What our students say after taking guidance from AURA MEDPREP.
+
+</p>
+
+<div class="testimonials">
+
+<div class="review">
+
+<p>
+
+"The counselling session completely changed my perspective. I finally understood which Allied Healthcare course was best for me."
+
+</p>
+
+<h4>
+
+Aarav Sharma
+
+</h4>
+
+<span>
+
+Allied Healthcare Student
+
+</span>
+
+</div>
+
+
+
+<div class="review">
+
+<p>
+
+"I was confused between Nursing and Allied Healthcare. The mentor explained everything clearly and helped me choose the perfect college."
+
+</p>
+
+<h4>
+
+Priya Singh
+
+</h4>
+
+<span>
+
+Nursing Aspirant
+
+</span>
+
+</div>
+
+
+
+<div class="review">
+
+<p>
+
+"Professional guidance, affordable pricing and amazing support throughout the admission process."
+
+</p>
+
+<h4>
+
+Rohan Verma
+
+</h4>
+
+<span>
+
+NEET Student
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="section-title">
+
+Frequently Asked <span>Questions</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+Some common questions asked by students.
+
+</p>
+
+<div class="faq">
+
+<div class="faq-item">
+
+<h3>
+
+Who can join this counselling program?
+
+</h3>
+
+<p>
+
+Any NEET, Nursing or Allied Healthcare aspirant looking for admission guidance can join.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+Is the counselling conducted online?
+
+</h3>
+
+<p>
+
+Yes. All counselling sessions are conducted online so students from anywhere in India can participate.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+How will I receive the meeting details?
+
+</h3>
+
+<p>
+
+After registration and successful payment, our team will contact you through WhatsApp or email with all further instructions.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="contact">
+
+<div class="contact-box">
+
+<h2>
+
+Ready to Start Your Career Journey?
+
+</h2>
+
+<p>
+
+Take the first step towards your dream medical career. Register now and let our expert mentors guide you towards the best colleges and career opportunities.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://forms.gle/YourGoogleFormLink" class="btn btn-primary">
+
+Register Now
+
+</a>
+
+<a href="https://rzp.io/l/YourRazorpayMainLink" class="btn btn-secondary">
+
+Pay Now
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:20px;margin-bottom:25px;">
+
+<a href="https://instagram.com/" style="text-decoration:none;color:white;">Instagram</a>
+
+<a href="https://t.me/" style="text-decoration:none;color:white;">Telegram</a>
+
+<a href="https://youtube.com/" style="text-decoration:none;color:white;">YouTube</a>
+
+<a href="mailto:your@email.com" style="text-decoration:none;color:white;">Email</a>
+
+</div>
+
+<p>
+
+© 2026 <strong> AURA MEDPREP </strong>. All Rights Reserved.
+
+<br><br>
+
+Designed with ❤️ for NEET, Nursing & Allied Healthcare Aspirants.
+
+</p>
+
+</footer>
+
+
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0px)";
+
+}
+
+});
+
+},{threshold:0.15});
+
+document.querySelectorAll(".feature-box,.mentor-card,.price-card,.review,.faq-item,.contact-box").forEach((el)=>{
+
+el.style.opacity="0";
+
+el.style.transform="translateY(60px)";
+
+el.style.transition="0.8s";
+
+observer.observe(el);
+
+});
+
+</script>
+
+</body>
+
+</html>
